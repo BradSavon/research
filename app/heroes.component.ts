@@ -24,12 +24,12 @@ export class HeroesComponent implements OnInit {
   }
 
   addHero(heroName: string): void{
-    this.newHero = new Hero(heroName.trim());
+    let newHero = new Hero(heroName.trim());
 
-    if(this.newHero.name.length === 0){
+    if(newHero.name.length === 0){
       return;
     }else{
-      this.heroService.createHero(this.newHero).then(
+      this.heroService.createHero(newHero).then(
         hero => {
           this.heroes.push(hero);
           this.selectedHero = null;
