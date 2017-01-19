@@ -25,12 +25,12 @@ var HeroesComponent = (function () {
     };
     HeroesComponent.prototype.addHero = function (heroName) {
         var _this = this;
-        this.newHero = new hero_1.Hero(heroName.trim());
-        if (this.newHero.name.length === 0) {
+        var newHero = new hero_1.Hero(heroName.trim());
+        if (newHero.name.length === 0) {
             return;
         }
         else {
-            this.heroService.createHero(this.newHero).then(function (hero) {
+            this.heroService.createHero(newHero).then(function (hero) {
                 _this.heroes.push(hero);
                 _this.selectedHero = null;
             });
